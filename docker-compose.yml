@@ -2,8 +2,9 @@ services:
   web:
     build: .
     volumes:
-      - ./:/app
+      - ./app:/app
       - ~/.aws/:/root/.aws/
     ports:
       - "3000:3000"
     tty: true
+    command: sh -c "npm run dev"
